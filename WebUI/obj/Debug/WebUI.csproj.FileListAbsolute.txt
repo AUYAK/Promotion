@@ -37,3 +37,5 @@ D:\Production\Promotion\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cac
 D:\Production\Promotion\WebUI\obj\Debug\WebUI.csproj.CoreCompileInputs.cache
 D:\Production\Promotion\WebUI\obj\Debug\WebUI.dll
 D:\Production\Promotion\WebUI\obj\Debug\WebUI.pdb
+D:\Production\Promotion\WebUI\bin\Domain.dll
+D:\Production\Promotion\WebUI\bin\Domain.pdb

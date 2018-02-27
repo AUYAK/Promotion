@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Domain.Entities.Blurb>
+
+@{
+    ViewBag.Title = "All blurbs";
+}
+
+<h2>List</h2>
+
+
+@foreach (var item in Model) {
+    <div class="item">
+        <h3>@item.Name</h3>
+        @item.Description
+    </div> 
+}
+
