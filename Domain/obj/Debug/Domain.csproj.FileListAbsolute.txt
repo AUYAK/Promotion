@@ -17,3 +17,8 @@ D:\Production\Promotion\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.c
 D:\Production\Promotion\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 D:\Production\Promotion\Domain\obj\Debug\Domain.dll
 D:\Production\Promotion\Domain\obj\Debug\Domain.pdb
+D:\Production\Promotion\Domain\bin\Debug\Domain.dll.config
+D:\Production\Promotion\Domain\bin\Debug\EntityFramework.dll
+D:\Production\Promotion\Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\Production\Promotion\Domain\bin\Debug\EntityFramework.xml
+D:\Production\Promotion\Domain\bin\Debug\EntityFramework.SqlServer.xml

@@ -39,3 +39,8 @@ D:\Production\Promotion\WebUI\obj\Debug\WebUI.dll
 D:\Production\Promotion\WebUI\obj\Debug\WebUI.pdb
 D:\Production\Promotion\WebUI\bin\Domain.dll
 D:\Production\Promotion\WebUI\bin\Domain.pdb
+D:\Production\Promotion\WebUI\bin\EntityFramework.dll
+D:\Production\Promotion\WebUI\bin\Domain.dll.config
+D:\Production\Promotion\WebUI\bin\EntityFramework.xml
+D:\Production\Promotion\WebUI\bin\EntityFramework.SqlServer.dll
+D:\Production\Promotion\WebUI\bin\EntityFramework.SqlServer.xml
