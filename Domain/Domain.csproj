@@ -72,11 +72,29 @@
     <Compile Include="Concrete\EFBlurbRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Entities\Blurb.cs" />
+    <Compile Include="Entities\BlurbCategory.cs" />
+    <Compile Include="Migrations\201802280805438_added categories to blurbs.cs" />
+    <Compile Include="Migrations\201802280805438_added categories to blurbs.Designer.cs">
+      <DependentUpon>201802280805438_added categories to blurbs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802281227484_edits in Blurb model.cs" />
+    <Compile Include="Migrations\201802281227484_edits in Blurb model.Designer.cs">
+      <DependentUpon>201802281227484_edits in Blurb model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802280805438_added categories to blurbs.resx">
+      <DependentUpon>201802280805438_added categories to blurbs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802281227484_edits in Blurb model.resx">
+      <DependentUpon>201802281227484_edits in Blurb model.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

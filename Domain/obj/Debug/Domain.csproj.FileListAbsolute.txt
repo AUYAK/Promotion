@@ -22,3 +22,5 @@ D:\Production\Promotion\Domain\bin\Debug\EntityFramework.dll
 D:\Production\Promotion\Domain\bin\Debug\EntityFramework.SqlServer.dll
 D:\Production\Promotion\Domain\bin\Debug\EntityFramework.xml
 D:\Production\Promotion\Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\Production\Promotion\Domain\obj\Debug\Domain.Migrations.addedcategoriestoblurbs.resources
+D:\Production\Promotion\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache

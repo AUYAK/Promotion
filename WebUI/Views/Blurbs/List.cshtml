@@ -10,7 +10,9 @@
 @foreach (var item in Model) {
     <div class="item">
         <h3>@item.Name</h3>
-        @item.Description
+        <p>@item.Description</p>
+       <p style="height:100px"> @item.Category.Name</p>
+
     </div> 
 }
 

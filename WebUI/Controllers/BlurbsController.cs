@@ -16,7 +16,7 @@ namespace WebUI.Controllers
         }
         public ViewResult List()
         {
-            return View(repository.Blurbs);
+            return View(repository.Blurbs.ToList());
         }
     }
 }
