@@ -24,3 +24,4 @@ D:\Production\Promotion\Domain\bin\Debug\EntityFramework.xml
 D:\Production\Promotion\Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\Production\Promotion\Domain\obj\Debug\Domain.Migrations.addedcategoriestoblurbs.resources
 D:\Production\Promotion\Domain\obj\Debug\Domain.csproj.GenerateResource.Cache
+D:\Production\Promotion\Domain\obj\Debug\Domain.Migrations.editsinBlurbmodel.resources
