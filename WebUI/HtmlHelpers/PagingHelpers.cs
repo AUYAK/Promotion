@@ -10,7 +10,7 @@ namespace WebUI.HtmlHelpers
         public static MvcHtmlString PageLinks(this HtmlHelper helper, PagingInfo paginginfo, Func<int, string> pageUrl)
         {
             StringBuilder result = new StringBuilder();
-            for (int i = 0; i < paginginfo.TotalPages; i++)
+            for (int i = 1; i <= paginginfo.TotalPages; i++)
             {
                 TagBuilder tag_a = new TagBuilder("a");
                 tag_a.MergeAttribute("href", pageUrl(i));

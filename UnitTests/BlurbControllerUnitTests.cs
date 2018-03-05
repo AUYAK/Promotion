@@ -5,6 +5,7 @@ using Domain.Abstract;
 using Domain.Entities;
 using System.Linq;
 using WebUI.Controllers;
+using WebUI.Models;
 
 namespace UnitTests
 {
@@ -27,9 +28,9 @@ namespace UnitTests
             BlurbsController controller = new BlurbsController(mock.Object);
             controller.Pagesize = 3;
             //Act
-            IEnumerable<Blurb> result = (IEnumerable<Blurb>)controller.List(2).Model;
+           BlurbsListViewModel result = (BlurbsListViewModel)controller.List(2).Model;
             //Assert
-            Blurb[] blurbs = result.ToArray();
+            Blurb[] blurbs = result.Blurbs.ToArray();
             Assert.AreEqual(blurbs[0].Name, "Some Blurb 4");
             Assert.AreEqual(blurbs[1].Name, "Some Blurb 5");
             Assert.AreEqual(blurbs[2].Name, "Some Blurb 6");
