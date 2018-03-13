@@ -8,11 +8,7 @@
 
 @foreach (var item in Model.Blurbs)
 {
-    <div class="item">
-        <h3>@item.Name</h3>
-        <p>@item.Description</p>
-        <p> @item.Category.Name</p>
-    </div>
+    Html.RenderPartial("BlurbSummary",item);
 }
 @Html.PageLinks(Model.pagingInfo,x=>Url.Action("List",new {page=x }))
 
