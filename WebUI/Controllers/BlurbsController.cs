@@ -15,11 +15,18 @@ namespace WebUI.Controllers
         {
             repository = rep;
         }
-        public ViewResult List(int page=1)
+        public ViewResult List(string category, int page = 1)
         {
-            BlurbsListViewModel PrLVM = new BlurbsListViewModel();
-            PrLVM.Blurbs = repository.Blurbs.OrderByDescending(b => b.DateOfCreate).Skip((page - 1) * Pagesize).Take(Pagesize).ToList();
-            PrLVM.pagingInfo = new PagingInfo { CurrentPage = page, ItemsPerPage = Pagesize, TotalItems = repository.Blurbs.Count() };
+            BlurbsListViewModel PrLVM = new BlurbsListViewModel()
+            {
+                Blurbs = repository.Blurbs
+                .Where(b => category == null || b.Category.Name == category)
+                .OrderByDescending(b => b.DateOfCreate).Skip((page - 1) * Pagesize)
+                .Take(Pagesize)
+                .ToList(),
+                CurrentCategory=category,
+                pagingInfo = new PagingInfo { CurrentPage = page, ItemsPerPage = Pagesize, TotalItems = repository.Blurbs.Count() }
+            };
             return View(PrLVM);
         }
     }

@@ -28,7 +28,7 @@ namespace UnitTests
             BlurbsController controller = new BlurbsController(mock.Object);
             controller.Pagesize = 3;
             //Act
-           BlurbsListViewModel result = (BlurbsListViewModel)controller.List(2).Model;
+           BlurbsListViewModel result = (BlurbsListViewModel)controller.List(null,2).Model;
             //Assert
             Blurb[] blurbs = result.Blurbs.ToArray();
             Assert.AreEqual(blurbs[0].Name, "Some Blurb 4");
