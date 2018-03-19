@@ -10,5 +10,5 @@
 {
     Html.RenderPartial("BlurbSummary",item);
 }
-@Html.PageLinks(Model.pagingInfo,x=>Url.Action("List",new {page=x }))
+@Html.PageLinks(Model.pagingInfo,x=>Url.Action("List",new {category=Model.CurrentCategory, page=x }))
 
