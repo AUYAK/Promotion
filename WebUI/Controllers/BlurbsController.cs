@@ -24,10 +24,13 @@ namespace WebUI.Controllers
                 .OrderByDescending(b => b.DateOfCreate).Skip((page - 1) * Pagesize)
                 .Take(Pagesize)
                 .ToList(),
-                CurrentCategory=category,
+                CurrentCategory = category,
+                Categories= repository.Blurbs.Select(x => x.Category.Name).Distinct(),
                 pagingInfo = new PagingInfo { CurrentPage = page, ItemsPerPage = Pagesize, TotalItems = repository.Blurbs.Count() }
             };
+            ViewBag.CurrentCategory = category;
             return View(PrLVM);
+            
         }
     }
 }

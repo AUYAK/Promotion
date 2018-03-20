@@ -3,12 +3,26 @@
     ViewBag.Title = "All blurbs";
 }
 
-<h2>List</h2>
+<div id="categories">
+    @Html.ActionLink("Home", "List", "Blurbs")
 
+    @foreach (var link in Model.Categories)
+    {
+        @Html.RouteLink(link, new
+        {
+            controller = "Blurbs",
+            action = "List",
+            category = link,
+            page = 1
+        },
+                  new { @class = link == Model.CurrentCategory ? "currentCategory" : null });
+    }
+</div>
 
-@foreach (var item in Model.Blurbs)
-{
-    Html.RenderPartial("BlurbSummary",item);
-}
-@Html.PageLinks(Model.pagingInfo,x=>Url.Action("List",new {category=Model.CurrentCategory, page=x }))
-
+<div id="content">
+    @foreach (var item in Model.Blurbs)
+    {
+        Html.RenderPartial("BlurbSummary", item);
+    }
+    @Html.PageLinks(Model.pagingInfo, x => Url.Action("List", new { category = Model.CurrentCategory, page = x }))
+</div>

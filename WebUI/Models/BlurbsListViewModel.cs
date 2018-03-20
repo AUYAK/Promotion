@@ -10,6 +10,7 @@ namespace WebUI.Models
     {
         public IEnumerable<Blurb> Blurbs { get; set; }
         public PagingInfo pagingInfo { get; set; }
-        public string CurrentCategory { get; set; }
+        public IEnumerable<string> Categories { get; set; }
+        public String CurrentCategory { get; set; }
     }
 }
