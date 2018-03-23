@@ -25,7 +25,7 @@ namespace WebUI.Controllers
                 .Take(Pagesize)
                 .ToList(),
                 CurrentCategory=category,
-                pagingInfo = new PagingInfo { CurrentPage = page, ItemsPerPage = Pagesize, TotalItems = repository.Blurbs.Count() }
+                pagingInfo = new PagingInfo { CurrentPage = page, ItemsPerPage = Pagesize, TotalItems = repository.Blurbs.Where(b=>category==null||b.Category.Name==category).Count() }
             };
             return View(PrLVM);
         }
