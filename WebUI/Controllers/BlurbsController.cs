@@ -24,9 +24,14 @@ namespace WebUI.Controllers
                 .OrderByDescending(b => b.DateOfCreate).Skip((page - 1) * Pagesize)
                 .Take(Pagesize)
                 .ToList(),
+<<<<<<< HEAD
                 CurrentCategory = category,
                 Categories= repository.Blurbs.Select(x => x.Category.Name).Distinct(),
                 pagingInfo = new PagingInfo { CurrentPage = page, ItemsPerPage = Pagesize, TotalItems = repository.Blurbs.Count() }
+=======
+                CurrentCategory=category,
+                pagingInfo = new PagingInfo { CurrentPage = page, ItemsPerPage = Pagesize, TotalItems = repository.Blurbs.Where(b=>category==null||b.Category.Name==category).Count() }
+>>>>>>> develop
             };
             ViewBag.CurrentCategory = category;
             return View(PrLVM);
