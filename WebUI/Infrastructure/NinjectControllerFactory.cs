@@ -30,6 +30,7 @@ namespace WebUI.Infrastructure
             //new Blurb{Name="Advertising of sporty lifestyle", Description="For everyone"},
             //new Blurb{Name="Advertising of strawberry from Luninets", Description="Created by community of grannies from back porch" } }.AsQueryable());
             _ninjectKernel.Bind<IBlurbRepository>().To<EFBlurbRepository>();
+            _ninjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
         }
     }
 }
