@@ -18,6 +18,6 @@ namespace Domain.Entities
         public DateTime DateOfCreate { get; set; }
 
         public int? CategoryID { get; set; }
-        public virtual BlurbCategory Category { get; set; }
+        public virtual ProductCategory Category { get; set; }
     }
 }

@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201803260943239_Added Products UseCase.Designer.cs">
       <DependentUpon>201803260943239_Added Products UseCase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803260954429_Edits Products UseCase.cs" />
+    <Compile Include="Migrations\201803260954429_Edits Products UseCase.Designer.cs">
+      <DependentUpon>201803260954429_Edits Products UseCase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803260943239_Added Products UseCase.resx">
       <DependentUpon>201803260943239_Added Products UseCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803260954429_Edits Products UseCase.resx">
+      <DependentUpon>201803260954429_Edits Products UseCase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

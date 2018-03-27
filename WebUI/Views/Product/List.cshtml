@@ -8,19 +8,12 @@
 
     @foreach (var link in Model.Categories)
     {
-        @Html.RouteLink(link, new
-        {
-            controller = "Product",
-            action = "List",
-            category = link,
-            page = 1
-        },
-         new { @class = link == Model.CurrentCategory ? "currentCategory" : null });
+        @Html.ActionLink(link, "List", "Product", new { @class = link == Model.CurrentCategory ? "currentCategory" : null });
     }
 </div>
 
 <div id="content">
-    @foreach (var item in Model.Blurbs)
+    @foreach (var item in Model.Products)
     {
         Html.RenderPartial("ProductSummary", item);
     }
