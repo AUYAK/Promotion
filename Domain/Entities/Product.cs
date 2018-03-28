@@ -16,7 +16,7 @@ namespace Domain.Entities
         public string Description { get; set; }
         [Required]
         public DateTime DateOfCreate { get; set; }
-
+        public decimal Price { get; set; }
         public int? CategoryID { get; set; }
         public virtual ProductCategory Category { get; set; }
     }
