@@ -20,7 +20,7 @@ namespace WebUI.Controllers
             ProductListViewModel PrLVM = new ProductListViewModel()
             {
                 Products = repository.Products
-                .Where(b => category == null || b.Category.Name == category)
+                .Where(b => category == null ||category==""|| b.Category.Name == category)
                 .OrderByDescending(b => b.DateOfCreate).Skip((page - 1) * Pagesize)
                 .Take(Pagesize)
                 .ToList(),
