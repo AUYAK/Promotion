@@ -17,38 +17,27 @@ namespace WebUI.Controllers
         {
             repository = repo;
         }
-        public ViewResult Index(string returnUrl)
+        public ViewResult Index(Cart cart,string returnUrl)
         {
-            return View(new CartIndexViewModel { Cart = GetCart(), ReturnUrl = returnUrl });
+            return View(new CartIndexViewModel { Cart = cart, ReturnUrl = returnUrl });
         }
-        public RedirectToRouteResult AddToCart(int productID, string returnUrl)
+        public RedirectToRouteResult AddToCart(Cart cart,int productID, string returnUrl)
         {
             Product product = repository.Products.FirstOrDefault(p => p.ProductID == productID);
             if (product != null)
             {
-                GetCart().AddItem(product, 1);
+                cart.AddItem(product, 1);
             }
             return RedirectToAction("Index","Cart",new { returnUrl });
         }
-        public RedirectToRouteResult RemoveFromCart(int productID, string returnUrl)
+        public RedirectToRouteResult RemoveFromCart(Cart cart,int productID, string returnUrl)
         {
             Product product = repository.Products.FirstOrDefault(p => p.ProductID == productID);
             if (product != null)
             {
-                GetCart().RemoveAll(product);
+                cart.RemoveAll(product);
             }
             return RedirectToAction("Index","Cart", new { returnUrl });
-        }
-
-        private Cart GetCart()
-        {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new Cart();
-                Session.Add("Cart", cart);
-            }
-            return cart;
         }
     }
 }
