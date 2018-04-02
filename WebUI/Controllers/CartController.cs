@@ -39,5 +39,9 @@ namespace WebUI.Controllers
             }
             return RedirectToAction("Index","Cart", new { returnUrl });
         }
+        public PartialViewResult Summary(Cart cart)
+        {
+            return PartialView(cart);
+        }
     }
 }
