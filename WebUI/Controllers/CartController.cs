@@ -12,36 +12,58 @@ namespace WebUI.Controllers
     public class CartController : Controller
     {
         private IProductRepository repository;
+        private IOrderProcessor processor;
 
-        public CartController(IProductRepository repo)
+        public CartController(IProductRepository repo, IOrderProcessor proc)
         {
+            processor = proc;
             repository = repo;
         }
-        public ViewResult Index(Cart cart,string returnUrl)
+        public ViewResult Index(Cart cart, string returnUrl)
         {
             return View(new CartIndexViewModel { Cart = cart, ReturnUrl = returnUrl });
         }
-        public RedirectToRouteResult AddToCart(Cart cart,int productID, string returnUrl)
+        public RedirectToRouteResult AddToCart(Cart cart, int productID, string returnUrl)
         {
             Product product = repository.Products.FirstOrDefault(p => p.ProductID == productID);
             if (product != null)
             {
                 cart.AddItem(product, 1);
             }
-            return RedirectToAction("Index","Cart",new { returnUrl });
+            return RedirectToAction("Index", "Cart", new { returnUrl });
         }
-        public RedirectToRouteResult RemoveFromCart(Cart cart,int productID, string returnUrl)
+        [HttpPost]
+        public ViewResult CheckOut(Cart cart, ShippingDetails shippingDetails)
+        {
+            if (cart.Lines.Count() == 0)
+            {
+                ModelState.AddModelError("", "Your cart is empty!");
+            }
+            if (ModelState.IsValid)
+            {
+                processor.ProcessOrder(cart, shippingDetails);
+                cart.Clear();
+                return View("Completed");
+            }
+            else
+                return View(shippingDetails);
+        }
+        public RedirectToRouteResult RemoveFromCart(Cart cart, int productID, string returnUrl)
         {
             Product product = repository.Products.FirstOrDefault(p => p.ProductID == productID);
             if (product != null)
             {
                 cart.RemoveAll(product);
             }
-            return RedirectToAction("Index","Cart", new { returnUrl });
+            return RedirectToAction("Index", "Cart", new { returnUrl });
         }
         public PartialViewResult Summary(Cart cart)
         {
             return PartialView(cart);
+        }
+        public ViewResult Checkout()
+        {
+            return View(new ShippingDetails());
         }
     }
 }

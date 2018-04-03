@@ -5,6 +5,7 @@ using Moq;
 using Ninject;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -31,6 +32,11 @@ namespace WebUI.Infrastructure
             //new Blurb{Name="Advertising of strawberry from Luninets", Description="Created by community of grannies from back porch" } }.AsQueryable());
             _ninjectKernel.Bind<IBlurbRepository>().To<EFBlurbRepository>();
             _ninjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
+            EmailSettings emailSettings = new EmailSettings()
+            {
+                WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
+            };
+            _ninjectKernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>().WithConstructorArgument("settings",emailSettings);
         }
     }
 }
