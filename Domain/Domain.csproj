@@ -69,15 +69,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IBlurbRepository.cs" />
+    <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Concrete\EFBlurbRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFProductRepository.cs" />
+    <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="Entities\Blurb.cs" />
     <Compile Include="Entities\BlurbCategory.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductCategory.cs" />
+    <Compile Include="Entities\ShippingDetails.cs" />
     <Compile Include="Migrations\201802280805438_added categories to blurbs.cs" />
     <Compile Include="Migrations\201802280805438_added categories to blurbs.Designer.cs">
       <DependentUpon>201802280805438_added categories to blurbs.cs</DependentUpon>
