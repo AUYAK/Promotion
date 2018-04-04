@@ -2,6 +2,7 @@
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -20,7 +21,7 @@ namespace Domain.Concrete
         public string ServerName = "smtp.example.com";
         public int ServerPort = 587;
         public bool WriteAsFile = false;
-        public string FileLocation = @"c:\sports_store_emails";
+        public string FileLocation = @"C:\sports_store_emails";
     }
     public class EmailOrderProcessor : IOrderProcessor
     {
@@ -34,6 +35,7 @@ namespace Domain.Concrete
         {
             using (var smtpClient = new SmtpClient())
             {
+                CultureInfo cultureInfo = new CultureInfo("en-US");
                 smtpClient.EnableSsl = emailSettings.UseSsl;
                 smtpClient.Host = emailSettings.ServerName;
                 smtpClient.Port = emailSettings.ServerPort;
@@ -52,9 +54,9 @@ namespace Domain.Concrete
                 foreach (var line in cart.Lines)
                 {
                     var subtotal = line.Product.Price * line.Quantity;
-                    body.AppendFormat("{0}x{1} (subtotal:{2:c})", line.Quantity, line.Product.Name, subtotal);
+                    body.AppendFormat(cultureInfo,"{0}x{1} (subtotal:{2:c})", line.Quantity, line.Product.Name,subtotal);
                 }
-                body.AppendFormat("Total order value: {0:c}", cart.ComputeTotalVal())
+                body.AppendFormat(cultureInfo,"Total order value: {0:c}",cart.ComputeTotalVal())
                     .AppendLine("---")
                     .AppendLine("Ship to:")
                     .AppendLine(shippingInfo.Name)

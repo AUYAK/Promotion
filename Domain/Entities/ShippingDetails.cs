@@ -10,6 +10,7 @@ namespace Domain.Entities
     public class ShippingDetails
     {
         [Required(ErrorMessage = "Please enter a name")]
+        [Display(Name="Your name")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Please enter a first adress line ")]
         public string Line1 { get; set; }
