@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201803280726531_added Price in Product model.Designer.cs">
       <DependentUpon>201803280726531_added Price in Product model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804040926572_Edits in product.cs" />
+    <Compile Include="Migrations\201804040926572_Edits in product.Designer.cs">
+      <DependentUpon>201804040926572_Edits in product.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803280726531_added Price in Product model.resx">
       <DependentUpon>201803280726531_added Price in Product model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804040926572_Edits in product.resx">
+      <DependentUpon>201804040926572_Edits in product.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

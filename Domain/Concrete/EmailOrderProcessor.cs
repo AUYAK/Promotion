@@ -57,6 +57,7 @@ namespace Domain.Concrete
                     body.AppendFormat(cultureInfo,"{0}x{1} (subtotal:{2:c})", line.Quantity, line.Product.Name,subtotal);
                 }
                 body.AppendFormat(cultureInfo,"Total order value: {0:c}",cart.ComputeTotalVal())
+                    //.AppendLine(" ")
                     .AppendLine("---")
                     .AppendLine("Ship to:")
                     .AppendLine(shippingInfo.Name)
