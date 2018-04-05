@@ -1,0 +1,38 @@
+﻿@model Domain.Entities.Product
+
+@{
+    ViewBag.Title = "Admin: Edit" + Model.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit @Model.Name</h1>
+
+@using (Html.BeginForm())
+{
+    @*@Html.EditorForModel()*@
+    <div>
+        @Html.HiddenFor(p => p.ProductID)
+    </div>
+    <div> 
+    <div class="editor-label">@Html.DisplayNameFor(p => p.Name)</div>
+        @Html.EditorFor(p => p.Name,new {htmlattributes=new {@class= "editor-field" } })
+    </div>
+    <div>
+        <div class="editor-label">@Html.DisplayNameFor(p => p.Description)</div>
+        @Html.EditorFor(p => p.Description, new { htmlattributes = new { @class = "editor-field" } })
+    </div>
+    <div>
+        <div class="editor-label">@Html.DisplayNameFor(p => p.DateOfCreate)</div>
+        @Html.EditorFor(p => p.DateOfCreate, new { htmlattributes = new { @class = "editor-field" } })
+    </div>
+    <div>
+        <div class="editor-label">@Html.DisplayNameFor(p => p.Price)</div>
+        @Html.EditorFor(p => p.Price, new { htmlattributes = new { @class = "editor-field" } })
+    </div>
+    <div>
+        <div class="editor-label">@Html.DisplayNameFor(p => p.CategoryID)</div>
+        @Html.EditorFor(p => p.CategoryID, new { htmlattributes = new { @class = "editor-field" } })
+    </div>
+        <input type="submit" value="Save">
+        @Html.ActionLink("Cancel and return to Index", "Index")
+        }
